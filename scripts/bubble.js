@@ -1,10 +1,11 @@
+var circles = new Array();
+var img = new Image();
+
 const canvasElem = document.getElementById('canvas');
 const canvasElemPhoto = document.getElementById('photo');
 const ctx = canvasElem.getContext('2d');
 const ctxPhoto = canvasElemPhoto.getContext('2d');
 
-var circles = new Array();
-var img = new Image();
 img.src = "data/tak.png";
 
 var whiteArea = [];
@@ -22,16 +23,15 @@ function Circle(x, y)
         ctx.arc(this.x, this.y, this.r, 0, 2*Math.PI);
         ctx.fill();
         ctx.lineWidth = 2;
-        ctx.strokeStyle = "#FFFFFF";
+        
+        ctx.strokeStyle = "#"+((1<<24)*Math.random()|0).toString(16);
         ctx.stroke();
 	}
     
     this.grow = function()
     {
-        if(this.r < 30)
-            this.r++;
-        else
-            this.growing = false;
+        if(this.r < 35)
+        this.r++;
     }
 }
 
