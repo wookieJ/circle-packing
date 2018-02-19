@@ -6,7 +6,7 @@ const canvasElemPhoto = document.getElementById('photo');
 const ctx = canvasElem.getContext('2d');
 const ctxPhoto = canvasElemPhoto.getContext('2d');
 
-img.src = "data/tak.png";
+img.src = "data/nie.png";
 
 var whiteArea = [];
 
@@ -24,13 +24,16 @@ function Circle(x, y)
         ctx.fill();
         ctx.lineWidth = 2;
         
-        ctx.strokeStyle = "#"+((1<<24)*Math.random()|0).toString(16);
+        randColor = ((1<<24)*Math.random()|0);
+        if(randColor < 200)
+            randColor = 65535;        
+        ctx.strokeStyle = "#"+randColor.toString(16);
         ctx.stroke();
 	}
     
     this.grow = function()
     {
-        if(this.r < 35)
+        if(this.r < 20)
         this.r++;
     }
 }
