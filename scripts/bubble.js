@@ -6,7 +6,7 @@ const canvasElemPhoto = document.getElementById('photo');
 const ctx = canvasElem.getContext('2d');
 const ctxPhoto = canvasElemPhoto.getContext('2d');
 
-img.src = "data/nie.png";
+img.src = "data/tak.png";
 
 var whiteArea = [];
 
