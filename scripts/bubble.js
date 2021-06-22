@@ -126,3 +126,4 @@ function run()
 
 setup();
 setInterval(run,1);
+location.reload();
