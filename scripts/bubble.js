@@ -7,6 +7,7 @@ const ctx = canvasElem.getContext('2d');
 const ctxPhoto = canvasElemPhoto.getContext('2d');
 
 img.src = "data/tak.png";
+var alreadyDone = false;
 
 var whiteArea = [];
 
@@ -126,4 +127,7 @@ function run()
 
 setup();
 setInterval(run,1);
-location.reload();
+if (!alreadyDone) {
+	location.reload();
+	alreadyDone = true;
+}
